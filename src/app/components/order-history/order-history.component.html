@@ -1,0 +1,26 @@
+<div class="booking-container">
+    <h1>Booking History</h1>
+    <table class="booking-table">
+      <thead>
+        <tr>
+          <th>S. No.</th>
+          <th>User ID</th>
+          <th>User Name</th>
+          <th>Order ID</th>
+          <th>Order Bill</th>
+          <th>No. of Days</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ booking.userId }}</td>
+          <td>{{ booking.userName }}</td>
+          <td>{{ booking.orderId }}</td>
+          <td>{{ booking.orderBill | currency }}</td>
+          <td>{{ booking.noOfDays }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

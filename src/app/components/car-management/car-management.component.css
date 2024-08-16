@@ -1,0 +1,114 @@
+/* Container for car management component */
+.car-management-container {
+  padding: 20px;
+  background-color: #f4f4f9; /* Light gray background */
+}
+
+/* Header styling */
+.car-management-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.car-management-header h1 {
+  color: #333; /* Dark gray text */
+  font-size: 2em;
+}
+
+/* Container for action forms */
+.car-management-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Form styling */
+.add-car-form, .remove-car-form, .get-car-form {
+  flex: 1;
+  max-width: 600px;
+  background: #fff; /* White background for forms */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  padding: 20px;
+  margin: auto;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555; /* Medium gray for labels */
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none;
+}
+
+/* Button styling */
+button {
+  padding: 12px 24px;
+  background-color: #007bff; /* Blue background */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+table th, table td {
+  padding: 12px;
+  border: 1px solid #ddd; /* Light gray border */
+  text-align: left;
+}
+
+table th {
+  background-color: #007bff; /* Blue background for header */
+  color: #fff;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternating row colors */
+}
+
+table tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .car-management-actions {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%; /* Full width buttons on small screens */
+  }
+}

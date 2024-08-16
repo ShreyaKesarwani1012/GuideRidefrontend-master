@@ -1,0 +1,60 @@
+.car-list-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .car-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .car-list-table th, .car-list-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .car-list-table th {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .car-list-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .book-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-button:hover {
+    background-color: #218838;
+  }
+  
+  @media (max-width: 768px) {
+    .car-list-table {
+      font-size: 14px;
+    }
+    
+    .car-list-table th, .car-list-table td {
+      padding: 8px;
+    }
+  }
+  

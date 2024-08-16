@@ -1,0 +1,33 @@
+
+<div class="car-list-container">
+    <h1>Available Cars</h1>
+    <table class="car-list-table">
+        
+      <thead>
+        <tr>
+          <th>SR No.</th>
+          <th>Car Name</th>
+          <th>Type</th>
+          <th>Registration Number</th>
+          <th>Fare</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let car of cars; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ car.modelName }}</td>
+          <td>{{ car.type }}</td>
+          <td>{{ car.registrationNumber }}</td>
+          <td>{{ car.fare | currency }}</td>
+          <td>{{ car.status }}</td>
+          <td>
+            <button (click)="bookCar(car)" class="book-button">Book</button>
+            <a  routerLink = "/book" routerLinkActive="active"  class="button-link" >Book Your Ride !</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

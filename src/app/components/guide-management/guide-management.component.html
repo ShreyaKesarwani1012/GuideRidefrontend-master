@@ -1,0 +1,68 @@
+<div class="guide-management-container">
+  <h1>Guide Management</h1>
+
+  <!-- Add Guide Form -->
+  <form [formGroup]="guideForm" (ngSubmit)="onAddGuide()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" type="text" />
+    </div>
+    <div class="form-group">
+      <label for="rating">Rating</label>
+      <select id="rating" formControlName="rating">
+        <option *ngFor="let rating of ratings" [value]="rating">{{ rating }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="fare">Fare</label>
+      <input id="fare" formControlName="fare" type="number" />
+    </div>
+    <button type="submit" [disabled]="guideForm.invalid">Add Guide</button>
+  </form>
+
+  <!-- Remove Guide -->
+  <div class="form-group">
+    <label for="removeId">Guide ID to Remove</label>
+    <input id="removeId" [(ngModel)]="removeId" type="text" />
+    <button (click)="onRemoveGuide()">Remove Guide</button>
+  </div>
+
+  <!-- Get Guide By ID -->
+  <div class="form-group">
+    <label for="getId">Guide ID to Get</label>
+    <input id="getId" [(ngModel)]="getId" type="text" />
+    <button (click)="onGetGuideById()">Get Guide Details</button>
+    <div *ngIf="guide">
+      <h2>Guide Details</h2>
+      <p>Name: {{ guide.id }}</p>
+      <p>Name: {{ guide.name }}</p>
+      <p>Rating: {{ guide.rating }}</p>
+      <p>Fare: {{ guide.fare }}</p>
+    </div>
+  </div>
+
+  <!-- List of All Guides -->
+  <div class="guides-list">
+    <h2>All Guides</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>SR No</th>
+          <th>Guide ID</th>
+          <th>Name</th>
+          <th>Rating</th>
+          <th>Fare</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let guide of guides; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ guide.id }}</td>
+          <td>{{ guide.name }}</td>
+          <td>{{ guide.rating }}</td>
+          <td>{{ guide.fare }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

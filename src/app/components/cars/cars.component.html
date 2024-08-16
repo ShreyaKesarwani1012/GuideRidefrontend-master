@@ -1,0 +1,13 @@
+<div class="cars-container">
+    <h1>Available Cars</h1>
+    <div class="cars-grid">
+      <div class="car-card" *ngFor="let car of cars">
+        <div class="car-info">
+          <h2>Car Name: {{ car.modelName }}</h2>
+          <p>Car Registration Number: {{ car.registrationNumber }}</p>
+          <button (click)="viewDetails(car)" class="view-details-btn">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

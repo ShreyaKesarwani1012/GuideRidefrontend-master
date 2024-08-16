@@ -1,0 +1,45 @@
+<div class="book-container">
+    <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+      <h2>Book Your Ride</h2>
+  
+      <div class="form-group">
+        <label for="startDate">Start Date:</label>
+        <input id="startDate" formControlName="startDate" type="date" />
+        <small *ngIf="bookForm.get('startDate')?.invalid && (bookForm.get('startDate')?.touched || bookForm.get('startDate')?.dirty)">
+          <small *ngIf="bookForm.get('startDate')?.errors?.['required']">Start Date is required.</small>
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="endDate">End Date:</label>
+        <input id="endDate" formControlName="endDate" type="date" />
+        <small *ngIf="bookForm.get('endDate')?.invalid && (bookForm.get('endDate')?.touched || bookForm.get('endDate')?.dirty)">
+          <small *ngIf="bookForm.get('endDate')?.errors?.['required']">End Date is required.</small>
+          
+          <small *ngIf="bookForm.get('endDate')?.errors?.['endDateInvalid']">End Date cannot be earlier than Start Date.</small>
+      
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="startPosition">Start Position:</label>
+        <input id="startPosition" formControlName="startPosition" type="text" />
+        <small *ngIf="bookForm.get('startPosition')?.invalid && (bookForm.get('startPosition')?.touched || bookForm.get('startPosition')?.dirty)">
+          <small *ngIf="bookForm.get('startPosition')?.errors?.['required']">Start Position is required.</small>
+        </small>
+      </div>
+  
+      <div class="form-group">
+        <label for="endPosition">End Position:</label>
+        <input id="endPosition" formControlName="endPosition" type="text" />
+        <small *ngIf="bookForm.get('endPosition')?.invalid && (bookForm.get('endPosition')?.touched || bookForm.get('endPosition')?.dirty)">
+          <small *ngIf="bookForm.get('endPosition')?.errors?.['required']">End Position is required.</small>
+        </small>
+      </div>
+  
+      <a routerLink="/bill">Get bill </a>
+      <button type="submit" [disabled]="bookForm.invalid">Book Now</button>
+    </form>
+  </div>
+  

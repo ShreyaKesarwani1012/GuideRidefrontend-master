@@ -1,0 +1,72 @@
+.guide-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .guide-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .guide-table th, .guide-table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .guide-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .guide-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .book-guide-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .book-guide-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (max-width: 768px) {
+    .guide-table th, .guide-table td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .guide-table th, .guide-table td {
+      text-align: right;
+    }
+  
+    .guide-table td {
+      padding-left: 50%;
+      position: relative;
+    }
+  
+    .guide-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 10px;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+  

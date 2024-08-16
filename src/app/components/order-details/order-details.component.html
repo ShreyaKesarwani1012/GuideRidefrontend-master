@@ -1,0 +1,31 @@
+<div class="order-container">
+  <h1>Order Details</h1>
+  <table class="order-table">
+    <thead>
+      <tr>
+        <th>S. No.</th>
+        <th>Booking ID</th>
+        <th>Order ID</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Total Amount</th>
+        <th>Date</th>
+        <th>Guide Name</th>
+        <th>Number of Days</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ order.bookingId }}</td>
+        <td>{{ order.orderId }}</td>
+        <td>{{ order.startDate | date }}</td>
+        <td>{{ order.endDate | date }}</td>
+        <td>{{ order.totalAmount | currency }}</td>
+        <td>{{ order.date | date }}</td>
+        <td>{{ order.guideName }}</td>
+        <td>{{ order.numberOfDays }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
